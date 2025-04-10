@@ -4,7 +4,7 @@
  * Description:
  *   - Defines the attributes or fields of a giveaway object returned by the GamerPower API
  *
- * Author: David Kaplansky
+ * Author: Everyone
  * Reasoning:
  *   - Ensures consistent structure and safety when working with our API data
  */

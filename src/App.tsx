@@ -6,7 +6,7 @@
  *   - Fetches giveaway data from the GamerPower API
  *   - Passes the data down to GiveawayList for rendering
  *
- * Author: David Kaplansky
+ * Author: Everyone
  * Reasoning:
  *   - This page is responsible for initializing the application, making the API call, and rendering the list of giveaway cards.
  */
