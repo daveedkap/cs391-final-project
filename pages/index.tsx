@@ -11,10 +11,11 @@
  *   - This page is responsible for initializing the application, making the API call, and rendering the list of giveaway cards.
  */
 
+import React from "react";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { Giveaway } from "./interfaces/Giveaway";
-import GiveawayList from "./components/GiveawayList";
+import { Giveaway } from "../interfaces/Giveaway";
+import GiveawayList from "../components/GiveawayList";
 
 /*
 * Styled div component to wrap the whole app
@@ -49,10 +50,7 @@ export default function App() {
         // For fetching our API, we had to use a CORS proxy, because GamerPower's server didn't allow frontend web apps to
         // use their API directly. So this was our workaround to gaining access.
         // Source for using CORS: https://forum.freecodecamp.org/t/from-origin-null-has-been-blocked-by-cors-policy-cross-origin-requests-error/610295
-        const response = await fetch(
-          "https://corsproxy.io/?" +
-          encodeURIComponent("https://www.gamerpower.com/api/giveaways?platform=steam&type=loot&sort-by=popularity")
-        );
+        const response = await fetch("/api/giveaways");
         const data: Giveaway[] = await response.json();
         setGiveaways(data);
       } catch (e) {
