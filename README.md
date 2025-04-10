@@ -17,11 +17,11 @@ This is a React + TypeScript web app that displays popular **Steam giveaways** u
 
 Follow these steps to clone, install, and run the app locally.
 
-git clone https://github.com/daveedkap/cs391-final-project.git
-cd cs391-final-project
-npm install
-npm install styled-components
-npm run dev
+- git clone https://github.com/daveedkap/cs391-final-project.git
+- cd cs391-final-project
+- npm install
+- npm install styled-components
+- npm run dev
 
 Visit the app in your browser:
 http://localhost:5173 (for example)
