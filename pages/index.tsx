@@ -1,5 +1,5 @@
 /*
- * App.tsx
+ * index.tsx
  * Component: App
  * Description:
  *   - Root component that sets up the homepage
@@ -11,9 +11,8 @@
  *   - This page is responsible for initializing the application, making the API call, and rendering the list of giveaway cards.
  */
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
 import { Giveaway } from "../interfaces/Giveaway";
 import GiveawayList from "../components/GiveawayList";
 
@@ -43,14 +42,16 @@ const Header = styled.h1`
 */
 export default function App() {
   const [giveaways, setGiveaways] = useState<Giveaway[]>([]); // State the variable which will be used to store the array of giveaways from the API return
+  const [isClient, setIsClient] = useState(false); // Boolean state to determine if we are on the client (avoids hydration issues)
+
+  useEffect(() => {
+    setIsClient(true); // Only render content once we're safely on the client
+  }, []);
 
   useEffect(() => {
     async function fetchGiveaways() {
       try {
-        // For fetching our API, we had to use a CORS proxy, because GamerPower's server didn't allow frontend web apps to
-        // use their API directly. So this was our workaround to gaining access.
-        // Source for using CORS: https://forum.freecodecamp.org/t/from-origin-null-has-been-blocked-by-cors-policy-cross-origin-requests-error/610295
-        const response = await fetch("/api/giveaways");
+        const response = await fetch("/api/giveaways"); // Use our Next.js back-end for fetching API
         const data: Giveaway[] = await response.json();
         setGiveaways(data);
       } catch (e) {
@@ -59,6 +60,8 @@ export default function App() {
     }
     fetchGiveaways();
   }, []);
+
+  if (!isClient) return null; // Prevent hydration mismatch by rendering nothing on the server
 
   return ( // Pass our giveaway data to GiveawayList, and use our div and header styled components to wrap everything
     <ParentDiv>
