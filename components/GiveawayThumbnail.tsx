@@ -1,11 +1,27 @@
+/*
+ * GiveawayThumbnail.tsx
+ * Description:
+ *   - Styles the image associated with the steam giveaway
+ * Author: Meera Malhotra
+ * Reasoning:
+ *   - React component used to style the images associated w the giveaways to be centered and stand out in their divs
+ */
+
 import styled from "styled-components";
+
+/*
+* Styled image that's centered with a rounded white border.
+*/
 
 const Image = styled.img`
     width: 100%;
-    max-width: 300px;
-    border-radius: 12px;
+    max-width: 40vh;
+    border-radius: 2vh;
     margin-bottom: 1rem;
-    align-self: center;
+    margin: auto;
+    border-style: solid;
+    border-width: 2vh;
+    border-color: white;
 `;
 
 export default function GiveawayThumbnail({ thumbnail }: { thumbnail: string }) {
