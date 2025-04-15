@@ -20,8 +20,8 @@ const Image = styled.img`
     margin-bottom: 1rem;
     margin: auto;
     border-style: solid;
-    border-width: 2vh;
-    border-color: white;
+    border-width: 1vh;
+    border-color: black;
 `;
 
 export default function GiveawayThumbnail({ thumbnail }: { thumbnail: string }) {
