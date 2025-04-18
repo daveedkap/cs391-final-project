@@ -18,13 +18,12 @@ import styled from "styled-components";
  * We're adding a border, background color, padding, border radius, and text alignment.
  */
 const TitleWrapper = styled.div`
-    border: 2px solid black;
-    background-color: white;
+    border: 2px solid #333;
     border-radius: 12px;
-    padding: 1.2rem;
-    margin-bottom: 1.5rem;
+    padding: .5rem;
+    margin: 0.75rem 0;
+    background-color: lightblue;
     text-align: center;
-    margin-top: 0.5rem;
 `;
 
 /*
@@ -32,9 +31,9 @@ const TitleWrapper = styled.div`
  * We're adding font size, weight, color, spacing, and margin.
  */
 const StyledTitle = styled.h2`
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #003366;
+    color:rgb(1, 8, 16);
     letter-spacing: 0.5px;
     margin: 0;
 `;
