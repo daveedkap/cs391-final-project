@@ -10,7 +10,8 @@
 import styled from "styled-components";
 
 /*
-* Styled image that's centered with a rounded white border.
+* Styled image that's centered with a rounded black border. To allow for responsiveness, 
+* when user shrinks screen, the image disappears so site is responsive.
 */
 
 const Image = styled.img`
@@ -22,6 +23,10 @@ const Image = styled.img`
     border-style: solid;
     border-width: 1vh;
     border-color: black;
+
+    @media (max-width: 900px) {
+        display: none;
+      }
 `;
 
 export default function GiveawayThumbnail({ thumbnail }: { thumbnail: string }) {
