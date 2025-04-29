@@ -24,7 +24,7 @@ const Image = styled.img`
     border-width: 1vh;
     border-color: black;
 
-    @media (max-width: 900px) {
+    @media screen and (max-width: 900px) {
         display: none;
       }
 `;
